@@ -1,0 +1,87 @@
+TYLER'S JOB SCREENING RULES
+
+These are the rules the triage tool uses to decide Apply or Pass.
+
+=== HARD NO (automatic Pass, no exceptions) ===
+
+Pass immediately if ANY of these are true:
+
+1. (MOVED - see LONG SHOT below. A degree or enrollment requirement on
+   its own is no longer an automatic Pass.)
+2. The job title contains Engineer, Scientist, Developer, or Researcher.
+3. Requires Python, SQL, Java, C++, or any ML framework (TensorFlow,
+   PyTorch) as a must-have.
+4. Requires 3 or more years of experience.
+5. The title contains Senior, Staff, Principal, Lead, Manager, Director,
+   or Head of.
+6. The job is basic data labeling with no real judgment, like tagging
+   images, drawing boxes, or plain transcription.
+   NOT a hard no: paid AI training, AI evaluation, or AI red teaming work,
+   where I review, grade, or try to break AI model answers.
+7. The role is sales quota carrying: SDR, BDR, Account Executive, or any
+   commission-only pay.
+8. The job is unpaid, equity-only, or an "exposure" opportunity.
+9. The job is not in the Seattle area (Lynnwood, Edmonds, Shoreline,
+   Seattle, Bellevue, Redmond, Kirkland, Woodinville) and is not remote.
+
+=== LONG SHOT (degree or enrollment required) ===
+
+A degree requirement, a CS-major requirement, or "must be a currently
+enrolled student" is NOT an automatic Pass on its own.
+
+If the posting requires a degree or enrollment BUT nothing else on the
+hard-no list is broken, mark it APPLY. Tyler wants to try these anyway.
+Cap the fit score at 50 and put "long shot: degree or enrollment
+required" in red_flags so he knows what he is walking into.
+
+If the degree requirement comes WITH any other hard-no (engineer or
+scientist title, required Python/SQL/ML, 3+ years, senior title, and so
+on), it is still a Pass.
+
+=== WHAT A GOOD FIT LOOKS LIKE ===
+
+Score higher when the posting has these:
+
+- Titles like: AI Operations, AI Enablement, Operations Assistant,
+  Operations Coordinator, Workflow Automation, Founder's Associate,
+  Business Operations, Program Coordinator.
+- Says entry level, 0 to 2 years, recent grad, or no experience required.
+- Paid AI training, AI evaluation, or red teaming work (reviewing,
+  grading, or stress-testing AI model answers).
+- Mentions AI tools by name: ChatGPT, Claude, Gemini, Copilot, or
+  "generative AI."
+- Mentions automation tools: Zapier, Make, Airtable, or no-code.
+- Mentions documentation, SOPs, process mapping, or training others.
+- Mentions spreadsheets, Google Sheets, or Excel as a main tool.
+- Mentions customer communication, scheduling, or coordination.
+- Company size is 1 to 200 people.
+- Willing to train, or describes learning on the job.
+
+=== WHAT I BRING (for judging fit) ===
+
+- 8 Anthropic Academy courses (Claude, Claude API, MCP, agent skills)
+- Zapier Building AI Agents and Building Intermediate Zaps
+- Google AI Essentials
+- 3 years part-time at a sign company, including scoping an AI intake tool
+- Run my own Rover pet care business, 5.0 rating, all admin myself
+- 4.0 GPA in college business coursework, no degree completed
+- Beginner at Python. I can read and modify code, not build from scratch.
+
+=== BORDERLINE RULES ===
+
+- "Preferred" or "nice to have" requirements do NOT trigger a Pass. Only
+  "required" or "must have" do.
+- A degree listed as "or equivalent experience" is NOT a hard no.
+- If the posting is vague about requirements, lean Apply and note it as
+  a gap.
+- Hybrid roles in the Seattle area count as local.
+
+=== OUTPUT ===
+
+For each posting, return:
+- decision: Apply or Pass
+- score: 0 to 100
+- reasons: the top 3, one line each
+- red_flags: which hard-no rules were triggered, if any
+- lead_with: the 2 things from my background to put first in the
+  application

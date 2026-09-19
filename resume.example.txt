@@ -1,0 +1,20 @@
+YOUR NAME
+Your city | Open to remote
+
+SUMMARY
+One or two lines on who you are and the kind of role you want.
+
+EXPERIENCE
+Job title, employer, dates
+- what you actually did
+- another thing you actually did
+
+EDUCATION
+School, dates, anything worth listing
+
+SKILLS
+- tools you use
+- anything else a posting might ask for
+
+(The real resume.txt is kept out of this repo. Copy this file to
+resume.txt and fill it in with your own details to run the tool.)

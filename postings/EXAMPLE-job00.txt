@@ -1,0 +1,19 @@
+Operations Coordinator (made-up example posting)
+
+We are a 40 person company looking for an Operations Coordinator to keep
+our internal processes running. This role is hybrid in Seattle, two days
+a week in office.
+
+What you will do
+- Keep our documentation and SOPs current
+- Run weekly reports in Google Sheets
+- Help the team automate small repetitive tasks
+- Answer questions from other teams and route them to the right person
+
+What we are looking for
+- 0 to 2 years of experience, or equivalent demonstrated ability
+- Comfortable with spreadsheets and writing clear instructions
+- Interest in AI tools is a plus
+
+This file is a made-up example so the folder structure is clear. The real
+postings are left out of this repo.

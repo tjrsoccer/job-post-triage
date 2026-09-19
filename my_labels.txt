@@ -1,0 +1,34 @@
+MY LABELS
+
+One line per posting. Use this exact format, with the pipe | between parts:
+
+jobNN | APPLY or PASS | short reason, one line
+
+Examples of what a filled-in line looks like:
+  job01 | APPLY | entry level ops role, mentions Zapier and Google Sheets
+  job02 | PASS  | senior title, wants 5 years experience
+
+Note: job08 was removed because it was an exact copy of job01.
+
+YOUR LABELS (fill in every blank):
+
+job01 | APPLY | AI and automation analyst role, fully remote
+job02 | APPLY | paid AI training work, no experience needed, remote
+job03 | APPLY | entry level AI specialist, 0 to 2 years, prompt engineering and automation
+job04 | APPLY | remote AI red teaming contract, trying to break AI models
+job05 | APPLY | paid AI evaluation work in Seattle, grading AI model answers
+job06 | APPLY | paid remote AI red teaming fellowship
+job07 | APPLY | paid AI training fellowship, improving AI models
+job09 | PASS  | engineer title
+job10 | PASS  | needs deep software engineering experience
+job11 | PASS  | software engineer title
+job12 | PASS  | staff software engineer title, senior level
+job13 | PASS  | for students in a computer science or IT degree, software dev work
+job14 | PASS  | needs a college degree or current enrollment
+job15 | PASS  | data scientist title, requires Python and SQL
+job16 | PASS  | scientist title, wants advanced degree
+job17 | PASS  | ML research role, needs graduate degree
+job18 | PASS  | ML engineering role, needs CS degree
+job19 | PASS  | senior ML engineer, needs MS or PhD
+job20 | PASS  | based in Florida or Texas, remote means 75% travel
+job21 | PASS  | manager title
