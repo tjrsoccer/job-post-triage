@@ -28,9 +28,18 @@ TITLE_SPOTS = [
 ]
 
 # Pay rules (rules 7 and 8). These phrases are rare, but always a no.
+#
+# "unpaid" on its own is NOT here. Good postings say "unpaid time off" or
+# "unpaid leave" in the benefits section, and a wrong reject at this layer
+# means the AI never sees the job. So only phrases that describe the job
+# itself as unpaid count. Anything else still goes to the AI, which has
+# rule 8 in its prompt.
 PAY_PHRASES = [
-    "commission only", "commission-only", "100% commission",
-    "unpaid", "equity only", "equity-only",
+    r"commission[ -]only", r"100% commission",
+    r"equity[ -]only",
+    r"unpaid (?:internship|position|role|opportunity|volunteer|work|job|gig)",
+    r"(?:this|it) is an? unpaid\b",
+    r"(?:position|role|internship|job|opportunity) is unpaid\b",
 ]
 
 
@@ -55,10 +64,10 @@ def check_posting(text):
         if re.search(rf"\b{SENIOR_WORDS}\b", title, flags=re.IGNORECASE):
             return True, f"senior title: {title.strip()}"
 
-    lowered = text.lower()
     for phrase in PAY_PHRASES:
-        if phrase in lowered:
-            return True, f"pay rule: {phrase}"
+        found = re.search(phrase, text, flags=re.IGNORECASE)
+        if found:
+            return True, f"pay rule: {found.group(0)}"
 
     return False, ""
 

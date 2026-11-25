@@ -94,7 +94,8 @@ first block blindly. Now it looks for the text block by type.
 ## Running it
 
 ```
-pip install anthropic
+pip install -r requirements.txt
+copy resume.example.txt resume.txt   # then fill in your own
 setx ANTHROPIC_API_KEY "your-key"
 python triage.py          # practice postings
 python triage.py locked   # final test
