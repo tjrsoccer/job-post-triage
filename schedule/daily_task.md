@@ -7,8 +7,7 @@ option below first.
 
 Indeed has no public API that a Python script can call, so the Indeed pull
 goes through the Indeed connector, which only a Claude session can use.
-Greenhouse and Lever are plain Python (`fetch_jobs.py`, built in the
-job-pulling PR). So one scheduled Claude task does the whole day:
+Greenhouse and Lever are plain Python (`fetch_jobs.py`, from PR #3). So one scheduled Claude task does the whole day:
 
 1. Pull Indeed through the connector, save each result, and run
    `python fetch_jobs.py indeed-import FILE` (names and de-duplicates it
@@ -54,9 +53,10 @@ the application tracker. Both can run together.
 ```
 Daily job triage run for tjrsoccer/job-post-triage.
 
-1. Search Indeed with the connector using the searches listed in
-   searches.txt. For each result, get the job details, save them to a
-   temp file, and run: python fetch_jobs.py indeed-import <file>
+1. Search Indeed with the connector using "indeed_searches" and
+   "indeed_country" from fetch_config.json. Save each get_job_details
+   result as-is to a .md file and run:
+   python fetch_jobs.py indeed-import <files>
 2. Run: python fetch_jobs.py
 3. Run: python daily.py
 4. If reports/<today>.csv has any rows:
