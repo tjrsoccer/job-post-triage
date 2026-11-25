@@ -80,7 +80,7 @@ first block blindly. Now it looks for the text block by type.
   not on whether I'm right about which jobs to apply to.
 - Most of my Pass postings were obvious ones like engineer titles. The tool
   hasn't been tested much on close calls.
-- It does not find jobs. I paste them in.
+- It only finds jobs on the sources set up in `fetch_config.json`.
 
 ## What I'd do next
 
@@ -90,6 +90,28 @@ first block blindly. Now it looks for the text block by type.
 - Track how my own Apply decisions turn out, so the rules get graded against
   real outcomes and not just my gut.
 - Report false applies and missed jobs separately over a larger set.
+
+## Pulling new postings automatically
+
+`fetch_jobs.py` drops new postings into `inbox/`, one text file each
+(`inbox/<source>-<id>.txt`, title on the first line). `seen.json`
+remembers every posting ever saved, so the same job is never written
+twice, even if it comes back under a new id. Both are kept out of git.
+
+```
+python fetch_jobs.py                       # Greenhouse + Lever boards
+python fetch_jobs.py indeed-import a.md    # Indeed postings (see below)
+python -m unittest discover tests
+```
+
+- **Greenhouse and Lever** have free public job-board feeds, so this is
+  plain Python. List the company slugs in `fetch_config.json`. Postings
+  outside the Seattle-area cities or remote are skipped; anything unclear
+  is kept, because the screener checks location again.
+- **Indeed** has no public API a script can call. Indeed postings come
+  from the Indeed connector in Claude: a Claude task runs the searches in
+  `fetch_config.json`, saves each job's details to a file, and passes the
+  files to `indeed-import`, which handles naming and dedupe.
 
 ## Running it
 
@@ -122,3 +144,5 @@ alone. The code, rules, labels, and method are all here.
 - `my_labels.txt` - my own calls, written before any code ran
 - `layer1.py` - plain-code filter
 - `triage.py` - full run, writes the CSV and prints the score
+- `fetch_jobs.py` - pulls new postings into `inbox/`
+- `fetch_config.json` - searches, job boards and cities to pull from

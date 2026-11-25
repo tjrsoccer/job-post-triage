@@ -1,0 +1,21 @@
+{
+  "_notes": "GUESSES, edit me. indeed_searches is read by the Claude task that uses the Indeed connector. greenhouse_boards and lever_companies are the company slugs from their job-board URLs (boards.greenhouse.io/SLUG, jobs.lever.co/SLUG).",
+
+  "indeed_searches": [
+    {"search": "operations coordinator", "location": "Seattle, WA"},
+    {"search": "operations coordinator", "location": "remote"},
+    {"search": "AI trainer", "location": "remote"},
+    {"search": "AI evaluator", "location": "remote"},
+    {"search": "AI red teaming", "location": "remote"},
+    {"search": "operations associate", "location": "Seattle, WA"}
+  ],
+  "indeed_country": "US",
+
+  "greenhouse_boards": ["anthropic", "scaleai"],
+  "lever_companies": [],
+
+  "cities": ["Seattle", "Lynnwood", "Edmonds", "Shoreline", "Bellevue",
+             "Redmond", "Kirkland", "Woodinville"],
+  "allow_remote": true,
+  "title_keywords": []
+}
