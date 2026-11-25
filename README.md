@@ -100,6 +100,19 @@ python triage.py          # practice postings
 python triage.py locked   # final test
 ```
 
+### Daily run
+
+`daily.py` screens new postings dropped in `inbox/` (by the job-pulling
+step), skips any it has already screened, and writes only the Apply
+results to `reports/YYYY-MM-DD.csv` and `.html`. `--email` sends them;
+`--dry-run` tests the pipeline without calling Claude. The plan for
+running it every morning is in `schedule/daily_task.md`.
+
+```
+python daily.py --dry-run
+python -m unittest discover tests
+```
+
 ## What is not in this repo
 
 - **The 20 job postings.** They are full job descriptions from real
@@ -122,3 +135,5 @@ alone. The code, rules, labels, and method are all here.
 - `my_labels.txt` - my own calls, written before any code ran
 - `layer1.py` - plain-code filter
 - `triage.py` - full run, writes the CSV and prints the score
+- `daily.py` - daily run on new postings, keeps only the Apply results
+- `schedule/daily_task.md` - daily schedule design and delivery options
