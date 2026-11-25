@@ -1,0 +1,4 @@
+inbox/
+reports/
+results*.csv
+__pycache__/
